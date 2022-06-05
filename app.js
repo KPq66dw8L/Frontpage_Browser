@@ -16,7 +16,7 @@ window.onload = function() {
         
         // check if we are using a macro/CMD
         if (CMDS.hasOwnProperty(search[0])) {
-            console.log("using macro");
+            // if so, which one ?
             switch (search[0]) {
                 case 'g':
                     CMDS.g(search.slice(1));
