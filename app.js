@@ -24,6 +24,36 @@ window.onload = function() {
                 case 'yt':
                     CMDS.yt(search.slice(1));
                     break;
+                case 'w':
+                    CMDS.w(search.slice(1));
+                    break;
+                case 'r':
+                    CMDS.r(search.slice(1));
+                    break;
+                case 'gh':
+                    CMDS.gh(search.slice(1));
+                    break;
+                case 'gi':
+                    CMDS.gi(search.slice(1));
+                    break;
+                case 'a':
+                    CMDS.a(search.slice(1));
+                    break;
+                case 'img':
+                    CMDS.img(search.slice(1));
+                    break;
+                case 'c':
+                    CMDS.c(search.slice(1));
+                    break;
+                case 'gd':
+                    CMDS.gd(search.slice(1));
+                    break;
+                case 'p':
+                    CMDS.p(search.slice(1));
+                    break;
+                case 'w3':
+                    CMDS.w3(search.slice(1));
+                    break;
             }
         }
         else if (search.length > 0) {
@@ -58,10 +88,10 @@ function encodeArgs(args) {
 
 // Commands
 let CMDS = {
-    g(e) {
+    g(e) { // google
         goTo("https://www.google.com", "/search?q=", encodeArgs(e));
     },
-    yt(e) {
+    yt(e) { // youtube
         let secondCMD = e[0];
         switch (secondCMD) {
             case 'c':
@@ -78,6 +108,85 @@ let CMDS = {
                 break;
             default:
                 goTo("https://www.youtube.com", "/results?search_query=", encodeArgs(e));
+                break;
+        }
+    },
+    w(e) { // wikipedia
+        let secondCMD = e[0];
+        switch (secondCMD) {
+            case 'j':
+                goTo("https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8");
+                break;
+            default:
+                goTo("https://www.wikipedia.org", "/w/index.php?search=", encodeArgs(e));
+                break;
+        }
+    },
+    r(e) { // reddit
+        let secondCMD = e[0];
+        switch (secondCMD) {
+            case "":
+                goTo("https://www.reddit.com");
+                break;
+            case "u":
+                goTo("https://www.reddit.com/r/unixporn/");
+                break;
+            default:
+                goTo("https://www.reddit.com", "/search/?q=", encodeArgs(e));
+                break;
+        }
+    },
+    gh(e) { // github
+        let secondCMD = e[0];
+        switch (secondCMD) {
+            case "":
+                goTo("https://github.com");
+                break;
+            default:
+                goTo("https://github.com", "/search?q=", encodeArgs(e));
+                break;
+        }
+    },
+    gi(e) { // gist 
+        goTo("https://gist.github.com");
+    },
+    a(e) { // amazon
+        goTo("https://www.amazon.fr", "/s?k=", encodeArgs(e));
+    },
+    img(e) { // google image 
+        goTo("https://www.google.com", "/search?tbm=isch&q=", encodeArgs(e));
+    },
+    c(e) { // cambridge dictionary 
+        goTo("https://dictionary.cambridge.org/dictionary/english/", "", encodeArgs(e));
+    },
+    gd(e) { // google docs
+        goTo("https://docs.google.com/document/u/0/");
+    },
+    p(e) { // pinterest
+        let secondCMD = e[0];
+        switch (secondCMD) {
+            case "":
+                goTo("https://www.pinterest.fr/");
+                break;
+            case 't':
+                goTo("https://www.pinterest.fr/kezhkia/_saved/");
+                break;
+            default:
+                goTo("https://www.pinterest.fr", "/search/pins/?q=", encodeArgs(e));
+        }
+    },
+    w3(e) { // filmlicious 
+        let secondCMD = e[0];
+        switch (secondCMD) {
+            case "":
+                goTo("https://www3.filmlicious.net");
+                break;
+            default:
+                let params = "";
+                for (let i = 0; i < e.length; i++) {
+                    params = params + "-" + encodeURIComponent(e[i].trim());
+                }
+                goTo("https://www3.filmlicious.net", "/search/", params);
                 break;
         }
     }
@@ -167,7 +276,7 @@ let CMDS = {
 //         redirect("https://netflix.com", "/search?q=", void 0, encodeArgs(e));
 //     },
 //     imdb: function(e) {
-//         redirect("imdb.com", "/find?s=all&q=", void 0, encodeArgs(e));
+//         redirect("x", "/find?s=all&q=", void 0, encodeArgs(e));
 //     },
 //     gm: function(e) {
 //         redirect("https://maps.google.com", "/maps?q=", void 0, encodeArgs(e));
