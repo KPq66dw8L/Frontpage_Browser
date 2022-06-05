@@ -1,0 +1,29 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(40, 40, 40);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Merriweather', serif;
+}
+
+input[type="text"] {
+    caret-color: rgb(235, 219, 178);
+    background-color: rgb(40, 40, 40);
+    border: none;
+    outline: none;
+    width: 80vw;
+    height: 20vh;
+    color: rgb(235, 219, 178);
+    font-size: 56px;
+    text-align: center;
+    text-indent: 0px;
+    font-family: 'Merriweather', serif;
+}
