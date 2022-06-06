@@ -62,6 +62,9 @@ window.onload = function() {
                 case 't':
                     CMDS.t(search.slice(1));
                     break;
+                case 'in':
+                    CMDS.in(search.slice(1));
+                    break;
             }
         }
         else if (search.length > 0) {
@@ -203,6 +206,9 @@ let CMDS = {
     },
     t(e) { // twitter
         goTo("https://twitter.com");
+    },
+    in(e) { // instagram
+        goTo("https://www.instagram.com/direct/inbox/", e);
     }
 }
 
