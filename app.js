@@ -54,6 +54,12 @@ window.onload = function() {
                 case 'w3':
                     CMDS.w3(search.slice(1));
                     break;
+                case 'tw':
+                    CMDS.tw(search.slice(1));
+                    break;
+                case 't':
+                    CMDS.t(search.slice(1));
+                    break;
             }
         }
         else if (search.length > 0) {
@@ -189,6 +195,12 @@ let CMDS = {
                 goTo("https://www3.filmlicious.net", "/search/", params);
                 break;
         }
+    },
+    tw(e) { // twitch
+        goTo("https://www.twitch.tv");
+    },
+    t(e) { // twitter
+        goTo("https://twitter.com");
     }
 }
 
