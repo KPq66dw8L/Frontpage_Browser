@@ -13,6 +13,8 @@ window.onload = function() {
         let search = document.getElementById("input").value.trim();
         search = search.split(" ");
         search = search.filter(function(e) { return e !== "" })
+        // remove possible backslash, because common fat finger mistake
+        search = search.filter(function(e) { return e !== /\\/ })
         
         // check if we are using a macro/CMD
         if (CMDS.hasOwnProperty(search[0])) {
@@ -197,7 +199,7 @@ let CMDS = {
         }
     },
     tw(e) { // twitch
-        goTo("https://www.twitch.tv");
+        goTo("https://www.twitch.tv", "/", encodeArgs(e));
     },
     t(e) { // twitter
         goTo("https://twitter.com");
