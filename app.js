@@ -14,7 +14,7 @@ window.onload = function() {
         search = search.split(" ");
         search = search.filter(function(e) { return e !== "" })
         // remove possible backslash, because common fat finger mistake
-        search = search.filter(function(e) { return e !== /\\/ })
+        search = search.map(function(e) { return e.replace(/\\/g, "") });
         
         // check if we are using a macro/CMD
         if (CMDS.hasOwnProperty(search[0])) {
@@ -199,7 +199,7 @@ let CMDS = {
         }
     },
     tw(e) { // twitch
-        goTo("https://www.twitch.tv", "/", encodeArgs(e));
+        goTo("https://www.twitch.tv", "/", e);
     },
     t(e) { // twitter
         goTo("https://twitter.com");
