@@ -68,6 +68,9 @@ window.onload = function() {
                 case 'ent':
                     CMDS.in(search.slice(1));
                     break;
+                case 'ugg':
+                    CMDS.ugg(search.slice(1));
+                    break;
             }
         }
         else if (search.length > 0) {
@@ -215,6 +218,17 @@ let CMDS = {
     },
     ent(e) { // ent
         goTo("https://ent.uca.fr");
+    },
+    ugg(e) { // ugg
+        let secondCMD = e[0];
+        switch (secondCMD) {
+            case "":
+                goTo("https://u.gg/lol/champions/");
+                break;
+            default:
+                goTo("https://u.gg/lol/champions/", e);
+                break;
+        }
     }
 }
 
