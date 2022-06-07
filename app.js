@@ -160,7 +160,7 @@ let CMDS = {
                 goTo("https://github.com");
                 break;
             default:
-                goTo("https://github.com", "/search?q=", encodeArgs(e));
+                goTo("https://github.com", "/?q=", encodeArgs(e));
                 break;
         }
     },
