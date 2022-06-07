@@ -66,7 +66,7 @@ window.onload = function() {
                     CMDS.in(search.slice(1));
                     break;
                 case 'ent':
-                    CMDS.in(search.slice(1));
+                    CMDS.ent(search.slice(1));
                     break;
                 case 'ugg':
                     CMDS.ugg(search.slice(1));
