@@ -211,7 +211,7 @@ let CMDS = {
         goTo("https://twitter.com");
     },
     in(e) { // instagram
-        goTo("https://www.instagram.com/direct/inbox/", e);
+        goTo("https://www.instagram.com/direct/inbox/");
     },
     ent(e) { // ent
         goTo("https://ent.uca.fr");
