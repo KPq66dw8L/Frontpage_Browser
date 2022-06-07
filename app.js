@@ -28,7 +28,7 @@ window.onload = function() {
                     break;
                 case 'you':
                     CMDS.yt(search.slice(1));
-                    break
+                    break;
                 case 'w':
                     CMDS.w(search.slice(1));
                     break;
