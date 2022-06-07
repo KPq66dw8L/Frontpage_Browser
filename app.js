@@ -65,6 +65,9 @@ window.onload = function() {
                 case 'in':
                     CMDS.in(search.slice(1));
                     break;
+                case 'ent':
+                    CMDS.in(search.slice(1));
+                    break;
             }
         }
         else if (search.length > 0) {
@@ -209,6 +212,9 @@ let CMDS = {
     },
     in(e) { // instagram
         goTo("https://www.instagram.com/direct/inbox/", e);
+    },
+    ent(e) { // ent
+        goTo("https://ent.uca.fr");
     }
 }
 
