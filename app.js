@@ -222,11 +222,11 @@ let CMDS = {
     ugg(e) { // ugg
         let secondCMD = e[0];
         switch (secondCMD) {
-            case "":
+            case void 0:
                 goTo("https://u.gg/lol/champions/");
                 break;
             default:
-                goTo("https://u.gg/lol/champions/", e);
+                window.location.href = "https://u.gg/lol/champions/" + secondCMD;
                 break;
         }
     }
