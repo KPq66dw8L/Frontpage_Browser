@@ -20,13 +20,13 @@ window.onload = function() {
         if (CMDS.hasOwnProperty(search[0])) {
             // if so, which one ?
             switch (search[0]) {
+                case 'help':
+                    CMDS.help(search.slice(1));
+                    break;
                 case 'g':
                     CMDS.g(search.slice(1));
                     break;
                 case 'yt':
-                    CMDS.yt(search.slice(1));
-                    break;
-                case 'you':
                     CMDS.yt(search.slice(1));
                     break;
                 case 'w':
@@ -108,9 +108,14 @@ function encodeArgs(args) {
 
 // Commands
 let CMDS = {
+    help(e) {
+        console.dir(CMDS);
+    },
+    _help: "help",
     g(e) { // google
         goTo("https://www.google.com", "/search?q=", encodeArgs(e));
     },
+    _g: "google",
     yt(e) { // youtube
         let secondCMD = e[0];
         switch (secondCMD) {
@@ -131,6 +136,7 @@ let CMDS = {
                 break;
         }
     },
+    _yt: "youtube",
     w(e) { // wikipedia
         let secondCMD = e[0];
         switch (secondCMD) {
@@ -142,6 +148,7 @@ let CMDS = {
                 break;
         }
     },
+    _w: "wikipedia & japanese wikipedia",
     r(e) { // reddit
         let secondCMD = e[0];
         switch (secondCMD) {
@@ -156,6 +163,7 @@ let CMDS = {
                 break;
         }
     },
+    _r: "reddit",
     gh(e) { // github
         let secondCMD = e[0];
         switch (secondCMD) {
@@ -167,21 +175,27 @@ let CMDS = {
                 break;
         }
     },
+    _gh: "github",
     gi(e) { // gist 
         goTo("https://gist.github.com");
     },
+    _gi: "gist github",
     a(e) { // amazon
         goTo("https://www.amazon.fr", "/s?k=", encodeArgs(e));
     },
+    _a: "amazon",
     img(e) { // google image 
         goTo("https://www.google.com", "/search?tbm=isch&q=", encodeArgs(e));
     },
+    _img: "google image",
     c(e) { // cambridge dictionary 
         goTo("https://dictionary.cambridge.org/dictionary/english/", "", encodeArgs(e));
     },
+    _c: "cambridge dictionnary",
     gd(e) { // google docs
         goTo("https://docs.google.com/document/u/0/");
     },
+    _gd: "google docs",
     p(e) { // pinterest
         let secondCMD = e[0];
         switch (secondCMD) {
@@ -195,6 +209,7 @@ let CMDS = {
                 goTo("https://www.pinterest.fr", "/search/pins/?q=", encodeArgs(e));
         }
     },
+    _p: "pinterest",
     w3(e) { // filmlicious 
         let secondCMD = e[0];
         switch (secondCMD) {
@@ -210,18 +225,23 @@ let CMDS = {
                 break;
         }
     },
+    _w3: "filmlicious",
     tw(e) { // twitch
         goTo("https://www.twitch.tv", "/", e);
     },
+    _tw: "twitch",
     t(e) { // twitter
         goTo("https://twitter.com");
     },
+    _t: "twitter",
     in(e) { // instagram
         goTo("https://www.instagram.com/direct/inbox/");
     },
+    _in: "instagram inbox",
     ent(e) { // ent
         goTo("https://ent.uca.fr");
     },
+    _ent: "ent",
     ugg(e) { // ugg
         let secondCMD = e[0];
         switch (secondCMD) {
@@ -232,7 +252,8 @@ let CMDS = {
                 window.location.href = "https://u.gg/lol/champions/" + secondCMD;
                 break;
         }
-    }
+    },
+    _ugg: "ugg",
 }
 
 // var COMMANDS = {
