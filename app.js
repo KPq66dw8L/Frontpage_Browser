@@ -17,9 +17,9 @@ window.onload = function() {
         search = search.map(function(e) { return e.replace(/\\/g, "") });
         
         // check if we are using a macro/CMD
-        if (CMDS.hasOwnProperty(search[0])) {
+        if (CMDS.hasOwnProperty(search[0].toLowerCase())) {
             // if so, which one ?
-            switch (search[0]) {
+            switch (search[0].toLowerCase()) {
                 case 'help':
                     CMDS.help(search.slice(1));
                     break;
