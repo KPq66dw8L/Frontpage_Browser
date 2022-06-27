@@ -68,9 +68,6 @@ window.onload = function() {
                 case 'in':
                     CMDS.in(search.slice(1));
                     break;
-                case 'ent':
-                    CMDS.ent(search.slice(1));
-                    break;
                 case 'ugg':
                     CMDS.ugg(search.slice(1));
                     break;
@@ -238,10 +235,6 @@ let CMDS = {
         goTo("https://www.instagram.com/direct/inbox/");
     },
     _in: "instagram inbox",
-    ent(e) { // ent
-        goTo("https://ent.uca.fr");
-    },
-    _ent: "ent",
     ugg(e) { // ugg
         let secondCMD = e[0];
         switch (secondCMD) {
